@@ -1,0 +1,25 @@
+@import "../../../variable";
+.search__result__div {
+  padding: 50px;
+  background-color: $main_background_color;
+  @include for-size(lt-sm){
+    padding: 0 15px;
+  }
+  table {
+    width: 100%;
+  }
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+
+  }
+
+  td, th {
+    width: 25%;
+
+    .user_avatar {
+      width: 50px;
+    }
+  }
+}

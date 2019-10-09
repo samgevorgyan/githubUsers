@@ -1,0 +1,21 @@
+@import "../../../variable";
+.search__main{
+  height: 500px;
+  background-color: $main_background_color;
+  @include for-size(lt-sm){
+    padding: 0 15px;
+  }
+
+  .search__form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .search__form__mat {
+    width: 100%;
+  }
+.search__input{
+
+}
+}

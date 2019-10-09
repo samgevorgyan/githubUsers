@@ -1,0 +1,20 @@
+
+<div class="search__main" fxLayout="row" fxLayoutAlign="center center" >
+  <form class="search__form" [formGroup]="searchForm" (ngSubmit)="onSubmit()" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+    <mat-form-field class="search__form__mat">
+      <input type="text" placeholder="Search by usernam" aria-label="Search by usernam" class="search__input" matInput
+             formControlName="search_input" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <button mat-raised-button> Search </button>
+  </form>
+
+
+
+
+</div>
