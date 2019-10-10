@@ -1,4 +1,4 @@
-#How to use
+# How to use
 
 On the first page, you can search Github Users by their Username.
 After typing one letter you can choose a username from list, or keep going type whole username
