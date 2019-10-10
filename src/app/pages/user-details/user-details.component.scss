@@ -3,15 +3,21 @@
 .user__info__parent {
 
   padding: 20px;
+  @include for-size(lt-sm) {
+    padding: 0;
+  }
 
   .user__info__container {
     background-color: $card_color;
     box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+
     .user__info__aside {
       span:nth-child(1) {
         font-size: 20px;
         font-weight: bold;
-
+        @include for-size(lt-md) {
+          font-size: 16px;
+        }
       }
 
       span:nth-child(2) {
@@ -19,29 +25,50 @@
         font-weight: bold;
         color: #fff;
         margin-left: 15px;
+        @include for-size(lt-md) {
+          font-size: 20px;
+        }
       }
 
       img {
-        width: 400px;
+        max-width: 400px;
         box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+        @include for-size(lt-lg) {
+          width: 250px;
+        }
       }
+
 
     }
 
     .user__info__content {
       padding: 10px;
-      p {
+
+      div {
+        .user__info__span {
+          margin: 0 15px;
+          @include for-size(lt-md) {
+            display: none;
+          }
+        }
+
         span:nth-child(1) {
           font-size: 15px;
           font-weight: bold;
 
         }
 
-        span:nth-child(2) {
+        span:last-child {
           font-size: 20px;
           font-weight: bold;
           color: #fff;
           margin: 0 15px;
+          @include for-size(lt-sm) {
+            font-size: 12px;
+          }
+          @include for-size(xs) {
+            font-size: 10px;
+          }
         }
       }
     }
@@ -49,36 +76,70 @@
   }
 }
 
-.user__repo__parent{
+.user__repo__parent {
   padding: 20px;
-  .user__repo__container{
+  @include for-size(lt-sm) {
+    padding: 0;
+  }
+
+  .user__repo__container {
     background-color: $card_color;
     box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
     padding: 20px;
-    .user__repo__list{
-      //background-color: black;
+
+    .user__repo__list {
       box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
       margin-bottom: 20px;
+
       .user__repo__span {
         margin: 0 15px;
+        @include for-size(lt-md) {
+          display: none;
+        }
+      }
+
+      a {
+        @include for-size(lt-sm) {
+          font-size: 14px;
+        }
+        @include for-size(xs) {
+          font-size: 12px;
+        }
       }
     }
   }
 
 }
 
-.user__follo__parent{
+.user__follo__parent {
   padding: 20px;
-  .user__follo__container{
+  @include for-size(lt-sm) {
+    padding: 0;
+  }
+
+  .user__follo__container {
     background-color: $card_color;
     box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
     padding: 20px;
-    .user__follo__list{
-      //background-color: black;
+
+    .user__follo__list {
       box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
       margin-bottom: 20px;
+
       .user__follo__span {
-      margin: 0 15px;
+        margin: 0 15px;
+        @include for-size(lt-md) {
+          display: none;
+        }
+      }
+
+      a {
+        @include for-size(lt-sm) {
+          font-size: 14px;
+        }
+        @include for-size(xs) {
+          font-size: 12px;
+        }
       }
 
     }

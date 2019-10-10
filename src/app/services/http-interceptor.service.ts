@@ -7,6 +7,7 @@ import {finalize, tap} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class HttpInterceptorService implements HttpInterceptor {
+  private errorExist = false;
 
   intercept(req: HttpRequest<any>, next: HttpHandler):
     Observable<HttpEvent<any>> {
@@ -20,13 +21,17 @@ export class HttpInterceptorService implements HttpInterceptor {
       tap(
         // Succeeds when there is a response; ignore other events
         event => {
-          console.log('eventeventevent', event);
+
+
         },
         // Operation failed; error is an HttpErrorResponse
         error => {
-          console.log('errorerrorerrorerrorerror', error);
-          if (error.status === 403) {
-            alert(error.error.message);
+
+          if (!this.errorExist) {
+            if (error.status === 403) {
+              this.errorExist = true;
+              alert('API rate limit exceeded, please try later');
+            }
           }
         }
       ),

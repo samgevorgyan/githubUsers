@@ -12,9 +12,9 @@ import {SharedService} from '../../services/shared.service';
 })
 export class UserDetailsComponent implements OnInit, OnDestroy {
   private routeSub: Subscription;
-  private UserInfo$: Observable<any>;
-  private UserRepos$: Observable<any>;
-  private UserFollowers$: Observable<any>;
+  public UserInfo$: Observable<any>;
+  public UserRepos$: Observable<any>;
+  public UserFollowers$: Observable<any>;
 
 
   constructor(private shared: SharedService,

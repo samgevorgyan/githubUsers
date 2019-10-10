@@ -1,3 +1,12 @@
+#How to use
+
+On the first page, you can search Github Users by their Username.
+After typing one letter you can choose a username from list, or keep going type whole username
+Search by pushing on the Search button.
+If there are users according to your word, you will see them under the search bar, in a table.
+For more information about a user you can click on the table list. After clicking you will see current user information such as name, username, repositories, followers.
+
+Also, you can change the design theme by clicking on the theme change icon, on the right side of the  header
 # GithupUsers
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
@@ -6,21 +15,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 

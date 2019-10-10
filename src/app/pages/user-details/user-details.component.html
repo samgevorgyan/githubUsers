@@ -2,16 +2,17 @@
 
 <div class="user__info__parent" *ngIf="(UserInfo$ | async) as user ">
 
-  <div class="user__info__container" fxLayout="row" fxLayoutAlign="start start">
+  <div class="user__info__container" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="start start"
+       fxLayoutAlign.lt-md="start center">
     <div class="user__info__aside">
       <img mat-card-image [src]="user['avatar_url'] " alt="User avatar">
       <div><span>Username -</span><span>{{ user['login'] }}</span></div>
       <div><span>Name -</span><span>{{ user['name'] }}</span></div>
     </div>
-    <div class="user__info__content" fxLayout="row wrap" fxLayoutAlign="start start">
-      <p *ngFor="let item of user | keyvalue ">
-        <span> {{item.key}}  </span> --- <span>{{ item.value }}</span>
-      </p>
+    <div class="user__info__content">
+      <div *ngFor="let item of user | keyvalue " fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="start start">
+        <span> {{item.key}}  </span> <span class="user__info__span"> - </span> <span>{{ item.value }}</span>
+      </div>
     </div>
   </div>
 
@@ -21,13 +22,25 @@
 <div class="user__repo__parent" *ngIf="(UserRepos$ | async) as repo ">
 
   <h1>User Repositories</h1>
-  <div class="user__repo__container" fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="20px">
+  <div class="user__repo__container" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign="start start"
+       fxLayoutAlign.lt-md="start center" fxLayoutGap="20px">
     <mat-list color="accent" role="list" class="user__repo__list" *ngFor="let item of repo | keyvalue ">
-      <mat-list-item ><span> Name </span><span class="user__repo__span"> - </span> <span>{{ item.value.name }}</span></mat-list-item>
-      <mat-list-item role="listitem"><span> Full Name  </span> <span class="user__repo__span"> - </span> <span>{{ item.value.full_name }}</span>
+      <mat-list-item>
+        <div fxLayout.lt-md="column">
+          <span> Name </span> <span class="user__repo__span"> - </span> <span>{{ item.value.name }}</span>
+        </div>
       </mat-list-item>
-      <mat-list-item role="listitem"><span>  Github repository  page </span> <span class="user__repo__span"> - </span>
-        <a  [href]="item.value.html_url" target="_blank">{{ item.value.html_url }}</a></mat-list-item>
+      <mat-list-item role="listitem">
+        <div fxLayout.lt-md="column">
+          <span> Full Name  </span> <span class="user__repo__span"> - </span> <span>{{ item.value.full_name }}</span>
+        </div>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <div fxLayout.lt-md="column">
+          <span>  Github repository  page </span> <span class="user__repo__span"> - </span>
+          <a [href]="item.value.html_url" target="_blank">{{ item.value.html_url }}</a>
+        </div>
+      </mat-list-item>
 
     </mat-list>
   </div>
@@ -38,11 +51,20 @@
 <div class="user__follo__parent" *ngIf="(UserFollowers$ | async) as followers ">
 
   <h1>User Followers </h1>
-  <div class="user__follo__container" fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="20px">
+  <div class="user__follo__container" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign.lt-md="start center" fxLayoutAlign="start start" fxLayoutGap="20px">
     <mat-list role="list" class="user__follo__list" *ngFor="let item of followers | keyvalue ">
-      <mat-list-item role="listitem"><span > Name </span> <span class="user__follo__span"> - </span> <span>{{ item.value.login }}</span></mat-list-item>
-      <mat-list-item role="listitem"><span >  Github follower page </span> <span class="user__follo__span"> - </span>
-        <a [href]="item.value.html_url" target="_blank">{{ item.value.html_url }}</a></mat-list-item>
+      <mat-list-item role="listitem">
+        <div fxLayout.lt-md="column">
+          <span> Name </span> <span class="user__follo__span"> - </span>
+          <span>{{ item.value.login }}</span>
+        </div>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <div fxLayout.lt-md="column">
+          <span>  Github follower page </span> <span class="user__follo__span"> - </span>
+          <a [href]="item.value.html_url" target="_blank">{{ item.value.html_url }}</a>
+        </div>
+      </mat-list-item>
 
     </mat-list>
   </div>
