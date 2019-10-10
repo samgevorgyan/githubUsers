@@ -11,11 +11,10 @@ import {SharedService} from '../../services/shared.service';
   styleUrls: ['./user-details.component.scss']
 })
 export class UserDetailsComponent implements OnInit, OnDestroy {
-  private routeSub: Subscription;
   public UserInfo$: Observable<any>;
   public UserRepos$: Observable<any>;
   public UserFollowers$: Observable<any>;
-
+  private routeSub: Subscription;
 
   constructor(private shared: SharedService,
               private route: ActivatedRoute,

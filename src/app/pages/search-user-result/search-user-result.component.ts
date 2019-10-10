@@ -30,7 +30,7 @@ export class SearchUserResultComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.resultSubscription = this.shared.getMessage('subjectForResult').subscribe(usersFromServer => {
-      console.log('messagemessage', usersFromServer);
+
       this.setDataSource(usersFromServer);
     });
 
@@ -53,7 +53,7 @@ export class SearchUserResultComponent implements OnInit, OnDestroy {
 
 
   showUserDetails(event) {
-    console.log('event', event);
+
     this.router.navigate(['./user', event.login], { relativeTo: this.route, } );
   }
 

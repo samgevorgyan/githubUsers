@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.themeSubscription = this.shared.getMessage('subjectForTheme').subscribe(color => {
-      console.log('messagemessage', color);
+
       switch (color) {
 
         case 'green': {

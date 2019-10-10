@@ -64,7 +64,7 @@ export class SearchUsersComponent implements OnInit {
               name: key.login,
             });
           });
-          console.log('optionsoptions', this.options);
+
           return this.options;
         }),
       );
@@ -86,7 +86,7 @@ export class SearchUsersComponent implements OnInit {
   onSearchChanges(): void {
     this.get_search_input.valueChanges.pipe(
     ).subscribe((val) => {
-      console.log('val', val);
+
       this.checkForValue(val);
       this.getUsers();
     });
