@@ -7,7 +7,7 @@ import {Observable, Subject} from 'rxjs';
 export class SharedService {
 
   private subjectForResult = new Subject<any>();
-  private subjectForDetail = new Subject<any>();
+  private subjectForTheme = new Subject<any>();
   constructor() { }
 
   sendMessage(subjectName, message: object) {

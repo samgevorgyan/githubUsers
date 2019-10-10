@@ -11,6 +11,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatListModule} from '@angular/material/list';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {MatListModule} from '@angular/material/list';
     MatSortModule,
     MatTableModule,
     MatTooltipModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule
   ],
   exports: [
     MatButtonModule,
@@ -40,7 +42,8 @@ import {MatListModule} from '@angular/material/list';
     MatSortModule,
     MatTableModule,
     MatTooltipModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule
   ]
 })
 export class MaterialModule {

@@ -2,10 +2,12 @@
   <mat-toolbar-row fxLayoutAlign="row" fxLayoutAlign="space-between center">
     <span>Search Guthub Users</span>
     <mat-icon [matMenuTriggerFor]="menu" class="mat_icon notranslate material-icons mat-icon-no-color" role="img"   matTooltip="Select a theme!" aria-hidden="true">format_color_fill</mat-icon>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-  </mat-toolbar-row>
 
+  </mat-toolbar-row>
+  <mat-menu #menu="matMenu" class="menu"  >
+    <button class="green" (click)="chooseColor('green')" mat-menu-item>green</button>
+    <button class="black"(click)="chooseColor('black')" mat-menu-item>black</button>
+    <button class="pink" (click)="chooseColor('pink')" mat-menu-item>pink</button>
+
+  </mat-menu>
 </mat-toolbar>
