@@ -3,9 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 export const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', loadChildren: () => import('./pages/home/home.module').then(mod => mod.HomeModule)},
-  {path: '**', redirectTo: '/home', pathMatch: 'full'}
+  {path: '', redirectTo: '/users', pathMatch: 'full'},
+  {path: 'users', loadChildren: () => import('./pages/home/home.module').then(mod => mod.HomeModule), data: { animation: 'UserPage' }},
+  {path: '**', redirectTo: '/users', pathMatch: 'full'}
 ];
 
 @NgModule({

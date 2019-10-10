@@ -13,8 +13,6 @@ export class HttpInterceptorService implements HttpInterceptor {
     const authReq = req.clone({
       setHeaders: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        Accept: '*/*',
       }
     });
 
@@ -22,19 +20,21 @@ export class HttpInterceptorService implements HttpInterceptor {
       tap(
         // Succeeds when there is a response; ignore other events
         event => {
-
+          console.log('eventeventevent', event);
         },
         // Operation failed; error is an HttpErrorResponse
         error => {
-
+          console.log('errorerrorerrorerrorerror', error);
+          if (error.status === 403) {
+            alert(error.error.message);
+          }
         }
       ),
       // Log when response observable either completes or errors
       finalize(() => {
 
 
-
       })
     );
-}
+  }
 }

@@ -6,18 +6,19 @@ import {Observable, Subject} from 'rxjs';
 })
 export class SharedService {
 
-  private subject = new Subject<any>();
+  private subjectForResult = new Subject<any>();
+  private subjectForDetail = new Subject<any>();
   constructor() { }
 
-  sendMessage(message: object) {
-    this.subject.next(message);
+  sendMessage(subjectName, message: object) {
+    this[subjectName].next(message);
   }
 
-  clearMessage() {
-    this.subject.next();
+  clearMessage(subjectName) {
+    this[subjectName].next();
   }
 
-  getMessage(): Observable<any> {
-    return this.subject.asObservable();
+  getMessage(subjectName): Observable<any> {
+    return this[subjectName].asObservable();
   }
 }

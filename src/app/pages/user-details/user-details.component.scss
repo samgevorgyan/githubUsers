@@ -1,0 +1,87 @@
+@import "../../../variable";
+
+.user__info__parent {
+
+  padding: 20px;
+
+  .user__info__container {
+    background-color: $card_color;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+    .user__info__aside {
+      span:nth-child(1) {
+        font-size: 20px;
+        font-weight: bold;
+
+      }
+
+      span:nth-child(2) {
+        font-size: 25px;
+        font-weight: bold;
+        color: #fff;
+        margin-left: 15px;
+      }
+
+      img {
+        width: 400px;
+        box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+      }
+
+    }
+
+    .user__info__content {
+      padding: 10px;
+      p {
+        span:nth-child(1) {
+          font-size: 15px;
+          font-weight: bold;
+
+        }
+
+        span:nth-child(2) {
+          font-size: 20px;
+          font-weight: bold;
+          color: #fff;
+          margin: 0 15px;
+        }
+      }
+    }
+
+  }
+}
+
+.user__repo__parent{
+  padding: 20px;
+  .user__repo__container{
+    background-color: $card_color;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+    padding: 20px;
+    .user__repo__list{
+      //background-color: black;
+      box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+      margin-bottom: 20px;
+      .user__repo__span {
+        margin: 0 15px;
+      }
+    }
+  }
+
+}
+
+.user__follo__parent{
+  padding: 20px;
+  .user__follo__container{
+    background-color: $card_color;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+    padding: 20px;
+    .user__follo__list{
+      //background-color: black;
+      box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+      margin-bottom: 20px;
+      .user__follo__span {
+      margin: 0 15px;
+      }
+
+    }
+  }
+
+}

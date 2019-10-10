@@ -2,9 +2,12 @@ import {CommonModule} from '@angular/common';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from '../../material.module';
 import {HttpInterceptorService} from '../../services/http-interceptor.service';
 import {SearchUserResultComponent} from '../search-user-result/search-user-result.component';
+import {UserDetailsComponent} from '../user-details/user-details.component';
 import {HomeRoutingModule} from './home-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -18,20 +21,19 @@ import {HomeComponent} from './home.component';
     HomeComponent,
     HeaderComponent,
     SearchUsersComponent,
-    SearchUserResultComponent
+    SearchUserResultComponent,
+    UserDetailsComponent
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule,
 
+    HomeRoutingModule,
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true},
-  ]
+
 })
 export class HomeModule {
 }

@@ -56,7 +56,7 @@ export class SearchUsersComponent implements OnInit {
       this.filteredOptions = this.http.getData(url).pipe(
         map((res: any) => {
           if (this.requestType || byButton) {
-            this.shared.sendMessage(res);
+            this.shared.sendMessage('subjectForResult', res);
           }
           this.options = [];
           res.items.forEach(key => {

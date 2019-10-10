@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<div class="user__info__parent" *ngIf="(UserInfo$ | async) as user ">
+
+  <div class="user__info__container" fxLayout="row" fxLayoutAlign="start start">
+    <div class="user__info__aside">
+      <img mat-card-image [src]="user['avatar_url'] " alt="User avatar">
+      <div><span>Username -</span><span>{{ user['login'] }}</span></div>
+      <div><span>Name -</span><span>{{ user['name'] }}</span></div>
+    </div>
+    <div class="user__info__content" fxLayout="row wrap" fxLayoutAlign="start start">
+      <p *ngFor="let item of user | keyvalue ">
+        <span> {{item.key}}  </span> --- <span>{{ item.value }}</span>
+      </p>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="user__repo__parent" *ngIf="(UserRepos$ | async) as repo ">
+
+  <h1>User Repositories</h1>
+  <div class="user__repo__container" fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="20px">
+    <mat-list color="accent" role="list" class="user__repo__list" *ngFor="let item of repo | keyvalue ">
+      <mat-list-item ><span> Name </span><span class="user__repo__span"> - </span> <span>{{ item.value.name }}</span></mat-list-item>
+      <mat-list-item role="listitem"><span> Full Name  </span> <span class="user__repo__span"> - </span> <span>{{ item.value.full_name }}</span>
+      </mat-list-item>
+      <mat-list-item role="listitem"><span>  Github repository  page </span> <span class="user__repo__span"> - </span>
+        <a  [href]="item.value.html_url" target="_blank">{{ item.value.html_url }}</a></mat-list-item>
+
+    </mat-list>
+  </div>
+
+</div>
+
+
+<div class="user__follo__parent" *ngIf="(UserFollowers$ | async) as followers ">
+
+  <h1>User Followers </h1>
+  <div class="user__follo__container" fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="20px">
+    <mat-list role="list" class="user__follo__list" *ngFor="let item of followers | keyvalue ">
+      <mat-list-item role="listitem"><span > Name </span> <span class="user__follo__span"> - </span> <span>{{ item.value.login }}</span></mat-list-item>
+      <mat-list-item role="listitem"><span >  Github follower page </span> <span class="user__follo__span"> - </span>
+        <a [href]="item.value.html_url" target="_blank">{{ item.value.html_url }}</a></mat-list-item>
+
+    </mat-list>
+  </div>
+</div>
